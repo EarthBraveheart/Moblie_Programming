@@ -6,26 +6,31 @@
     android:layout_marginLeft="25dp">
 
 <EditText
+    android:id="@+id/register_user_id"
     android:drawableLeft="@drawable/ic_person"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:hint="@string/user_id"/>
     <EditText
+        android:id="@+id/register_name"
         android:drawableLeft="@drawable/ic_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Name"/>
     <EditText
+        android:id="@+id/register_age"
         android:drawableLeft="@drawable/ic_age"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Age"/>
     <EditText
+        android:id="@+id/register_password"
         android:drawableLeft="@drawable/ic_lock"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/password"/>
     <Button
+        android:id="@+id/register_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/new_acc"/>

@@ -7,19 +7,27 @@
         android:layout_height="wrap_content"
         android:padding="50dp"
         android:orientation="vertical">
-
+    <Button
+        android:id="@+id/bmi_back_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BACK"/>
     <EditText
+        android:layout_marginTop="10dp"
+        android:id="@+id/BMI_Height"
         android:drawableLeft="@drawable/ic_up"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Height(cm)" />
     <EditText
+        android:id="@+id/BMI_Weight"
         android:drawableLeft="@drawable/ic_down"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Weight(kg)"/>
     <Button
+        android:id="@+id/BMI_btn"
         android:layout_marginTop="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,6 +39,7 @@
         android:layout_height="wrap_content"
         android:hint="Your BMI"/>
     <EditText
+        android:id="@+id/BMI_Result"
         android:textAlignment="center"
         android:layout_marginTop="75dp"
         android:layout_width="match_parent"
