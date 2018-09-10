@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Moblie_Programming.iml" filepath="$PROJECT_DIR$/Moblie_Programming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Moblie_Programming.iml" filepath="$PROJECT_DIR$/Moblie_Programming.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyUser.iml" filepath="$PROJECT_DIR$/MyUser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
