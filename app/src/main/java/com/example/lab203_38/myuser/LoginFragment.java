@@ -28,6 +28,7 @@ public class LoginFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
+        Log.d("LOGIN", "On Create");
         initLoginbutton();
         initRegister();
     }
@@ -39,14 +40,15 @@ public class LoginFragment extends Fragment {
                 EditText _password = (EditText) getView().findViewById(R.id.login_password);
                 String _useridStr = _userid.getText().toString();
                 String _passwordStr = _password.getText().toString();
-                if (_useridStr.isEmpty() || _passwordStr.isEmpty()) {
-                    Toast.makeText(
-                            getActivity(), "Please enter your user or password", Toast.LENGTH_SHORT).show();
-                    Log.d("LOGIN", "User or Password is empty");
-                } else if (_useridStr.equals("admin") && _passwordStr.equals("admin")) {
-                    Log.d("Login", "Goto BMI");
+                if (_useridStr.equals("admin") && _passwordStr.equals("admin")) {
+                    Log.d("LOGIN", "Goto MENU");
                     getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_view, new MenuFragment()).commit();
-                } else {
+                }
+                else if (_useridStr.isEmpty() || _passwordStr.isEmpty()) {
+                    Toast.makeText(getActivity(), "Please enter your user or password", Toast.LENGTH_SHORT).show();
+                    Log.d("LOGIN", "User or Password is empty");
+                }
+                else {
                     Toast.makeText(getActivity(), "Error Login", Toast.LENGTH_SHORT).show();
                     Log.d("LOGIN", "INVAILD username or password");
                 }

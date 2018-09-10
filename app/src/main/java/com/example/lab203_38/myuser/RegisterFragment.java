@@ -30,32 +30,27 @@ public class RegisterFragment extends Fragment{
         Button _registerBtn = (Button) getView().findViewById(R.id.register_btn);
         _registerBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                EditText _registerId = (EditText) getView().findViewById(R.id.register_user_id);
-                EditText _registerName = (EditText) getView().findViewById(R.id.register_name);
-                EditText _registerAge = (EditText) getView().findViewById(R.id.register_age);
-                EditText _registerPassword = (EditText) getView().findViewById(R.id.register_password);
-                String _registerIdStr = _registerId.getText().toString();
-                String _registerNameStr = _registerName.getText().toString();
-                String _registerAgeStr = _registerAge.getText().toString();
-                String _registerPasswordStr = _registerPassword.getText().toString();
-                if (_registerIdStr.isEmpty() || _registerAgeStr.isEmpty() || _registerNameStr.isEmpty() || _registerPasswordStr.isEmpty()){
-                    Toast.makeText(
-                            getActivity(), "กรุณาระบุข้อมูลให้ครบ", Toast.LENGTH_SHORT
-                    ).show();
-                    Log.d("REGISTER", "USER OR PASSWORD OR NAME OR AGE IS EMPTY");
+                EditText _regEmail = (EditText) getView().findViewById(R.id.reg_email);
+                EditText _regPassowrd = (EditText) getView().findViewById(R.id.reg_password);
+                EditText _rePassword = (EditText) getView().findViewById(R.id.passwordss);
+                String _regEmailStr = _regEmail.getText().toString();
+                String _regPassowrdStr = _regPassowrd.getText().toString();
+                String _rePasswordStr = _rePassword.getText().toString();
+                if (_regPassowrdStr.length() > 6 && _rePasswordStr.length() > 6 && _regPassowrd.equals(_rePassword)){
+
+                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_view, new LoginFragment()).commit();
                 }
-                else if (_registerIdStr.equals("admin")){
-                    Toast.makeText(
-                            getActivity(), "Username มีในระบบอยู่แล้ว ", Toast.LENGTH_SHORT
-                    ).show();
-                    Log.d("REGISTER", "USER ALREADY EXIST");
-                }
-                else {
-                    Log.d("REGISTER", "GO TO BMI");
-                    getActivity().getSupportFragmentManager()
-                            .beginTransaction()
-                            .replace(R.id.main_view, new BMIFragment())
-                            .commit();
+                else{
+                    if (_regPassowrdStr.length() < 6 || _rePasswordStr.length() < 6){
+                        Toast.makeText(
+                                getActivity(), "password > 6 characters", Toast.LENGTH_SHORT
+                        ).show();
+                    }
+                    else if (!_regPassowrdStr.equals(_rePasswordStr)){
+                        Toast.makeText(
+                                getActivity(), "password isn't equal", Toast.LENGTH_SHORT
+                        ).show();
+                    }
                 }
             }
         });

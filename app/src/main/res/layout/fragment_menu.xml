@@ -7,6 +7,10 @@
         android:id="@+id/menu_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
     </ListView>
+    <Button
+        android:id="@+id/sign_out_btn"
+        android:hint="Sign out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>
