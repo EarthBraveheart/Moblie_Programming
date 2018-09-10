@@ -26,11 +26,13 @@ public class MenuFragment extends Fragment{
         _menu.add("BMI");
         _menu.add("Weight");
         _menu.add("Setup");
-        ArrayAdapter<String> _menuadapter = new ArrayAdapter<>(
+        ArrayAdapter<String> _menuadapter = new ArrayAdapter<String>(
                 getActivity(),
                 android.R.layout.simple_list_item_1,_menu
         );
+
         ListView _menulist = (ListView) getView().findViewById(R.id.menu_list);
+        System.out.print(_menulist);
         _menulist.setAdapter(_menuadapter);
         _menulist.setOnItemClickListener(new AdapterView.OnItemClickListener(){
          @Override
