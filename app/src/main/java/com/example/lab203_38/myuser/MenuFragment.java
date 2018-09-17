@@ -20,6 +20,12 @@ import java.util.ArrayList;
 
 public class MenuFragment extends Fragment{
     ArrayList<String> _menu = new ArrayList<>();
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater,@Nullable ViewGroup container,@Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_menu, container, false);
+    }
+
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
@@ -32,19 +38,25 @@ public class MenuFragment extends Fragment{
         );
 
         ListView _menulist = (ListView) getView().findViewById(R.id.menu_list);
-        System.out.print(_menulist);
         _menulist.setAdapter(_menuadapter);
         _menulist.setOnItemClickListener(new AdapterView.OnItemClickListener(){
          @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l){
+            public void onItemClick(AdapterView<?> parent, View view, int i, long l){
              Log.d("MENU", "Click on menu = "+_menu.get(i));
-             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_view, new BMIFragment()).commit();
+             if (_menu.get(i).equals("BMI")){
+                 Log.d("MENU", "GO TO BMI");
+                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_view, new BMIFragment()).commit();
+             }
+             else if (_menu.get(i).equals("Weight"))
+             {
+                 Log.d("MENU", "GO TO WEIGHT");
+                 getActivity().getSupportFragmentManager()
+                         .beginTransaction()
+                         .replace(R.id.main_view, new WeightFragment())
+                         .commit();
+             }
          }
         });
     }
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.flagment_login, container, false);
-    }
+
 }

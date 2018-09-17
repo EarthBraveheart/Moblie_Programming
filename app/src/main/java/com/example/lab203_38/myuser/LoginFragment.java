@@ -41,8 +41,11 @@ public class LoginFragment extends Fragment {
                 String _useridStr = _userid.getText().toString();
                 String _passwordStr = _password.getText().toString();
                 if (_useridStr.equals("admin") && _passwordStr.equals("admin")) {
-                    Log.d("LOGIN", "Goto MENU");
-                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_view, new MenuFragment()).commit();
+                    Log.d("LOGIN", "GO TO MENU");
+                    getActivity().getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.main_view, new MenuFragment())
+                            .commit();
                 }
                 else if (_useridStr.isEmpty() || _passwordStr.isEmpty()) {
                     Toast.makeText(getActivity(), "Please enter your user or password", Toast.LENGTH_SHORT).show();
